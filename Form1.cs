@@ -33,7 +33,7 @@ namespace mealmate
         {
             Register register = new Register();
             register.Show();
-           // this.Close();
+            this.Hide();
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -60,8 +60,7 @@ namespace mealmate
                 {
                     admin adminform = new admin();
                     adminform.Show();   
-                    Form1 form = new Form1();
-                    form.Hide();
+                    this.Hide();
                 }
                 else
                 {

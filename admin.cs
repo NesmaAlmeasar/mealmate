@@ -20,17 +20,15 @@ namespace mealmate
         private void admin_Load(object sender, EventArgs e)
         {
 
+            dietmanage1.Visible = false;
+            foodmanage1.Visible = false;
         }
-
-      
-
-       
         
 
         private void buttonhome_Click(object sender, EventArgs e)
         {
-            admin adminform = new admin();
-            adminform.Show();
+            foodmanage1.Visible = false;
+            dietmanage1.Visible = false;
         }
 
         private void buttonfoodmang_Click(object sender, EventArgs e)
@@ -58,6 +56,11 @@ namespace mealmate
         {
             dietmanage1.Visible = true;
             foodmanage1.Visible=false;
+        }
+
+        private void dietmanage1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -38,14 +38,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RestrictionID = new System.Windows.Forms.TextBox();
+            this.addDiet = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.RestrictionDescription = new System.Windows.Forms.TextBox();
             this.RestrictionName = new System.Windows.Forms.TextBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addDiet = new System.Windows.Forms.Button();
-            this.RestrictionID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +69,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "عرض الانظمه المدرجه";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -88,6 +89,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "تعديل نظام";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -132,6 +134,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "إضافة نظام غذائي ";
             this.groupBox1.Visible = false;
+            // 
+            // RestrictionID
+            // 
+            this.RestrictionID.Location = new System.Drawing.Point(1132, 97);
+            this.RestrictionID.Multiline = true;
+            this.RestrictionID.Name = "RestrictionID";
+            this.RestrictionID.Size = new System.Drawing.Size(179, 35);
+            this.RestrictionID.TabIndex = 6;
+            // 
+            // addDiet
+            // 
+            this.addDiet.Location = new System.Drawing.Point(53, 80);
+            this.addDiet.Name = "addDiet";
+            this.addDiet.Size = new System.Drawing.Size(118, 52);
+            this.addDiet.TabIndex = 5;
+            this.addDiet.Text = "إضافة ";
+            this.addDiet.UseVisualStyleBackColor = true;
+            this.addDiet.Click += new System.EventHandler(this.addDiet_Click);
             // 
             // label3
             // 
@@ -179,24 +199,6 @@
             this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
-            // 
-            // addDiet
-            // 
-            this.addDiet.Location = new System.Drawing.Point(53, 80);
-            this.addDiet.Name = "addDiet";
-            this.addDiet.Size = new System.Drawing.Size(118, 52);
-            this.addDiet.TabIndex = 5;
-            this.addDiet.Text = "إضافة ";
-            this.addDiet.UseVisualStyleBackColor = true;
-            this.addDiet.Click += new System.EventHandler(this.addDiet_Click);
-            // 
-            // RestrictionID
-            // 
-            this.RestrictionID.Location = new System.Drawing.Point(1132, 119);
-            this.RestrictionID.Multiline = true;
-            this.RestrictionID.Name = "RestrictionID";
-            this.RestrictionID.Size = new System.Drawing.Size(179, 35);
-            this.RestrictionID.TabIndex = 6;
             // 
             // Dietmanage
             // 

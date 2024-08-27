@@ -73,6 +73,12 @@
     <Compile Include="admin.Designer.cs">
       <DependentUpon>admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="CartsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CartsControl.Designer.cs">
+      <DependentUpon>CartsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dietmanage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin.resx">
       <DependentUpon>admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CartsControl.resx">
+      <DependentUpon>CartsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dietmanage.resx">
       <DependentUpon>Dietmanage.cs</DependentUpon>

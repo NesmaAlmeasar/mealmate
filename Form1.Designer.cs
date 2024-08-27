@@ -113,6 +113,7 @@
             // loginbutton
             // 
             this.loginbutton.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.loginbutton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginbutton.Image = global::mealmate.Properties.Resources.enter__1_;
             this.loginbutton.Location = new System.Drawing.Point(148, 553);
             this.loginbutton.Name = "loginbutton";

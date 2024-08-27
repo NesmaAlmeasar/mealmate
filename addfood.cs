@@ -20,32 +20,11 @@ namespace mealmate
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void button3_Click(object sender, EventArgs e)
         {
-            addfood addfoodform = new addfood();
-            addfoodform.Close();
-        admin adminform = new admin();  
-            adminform.Show();
+          this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -56,9 +35,11 @@ namespace mealmate
             }
             else
             {
+                SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-EKGE4HQ;Initial Catalog=mealmate;Integrated Security=True");
+
                 if (state == 0)
                 {
-                    SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-EKGE4HQ;Initial Catalog=mealmate;Integrated Security=True");
+
 
                     try
                     {
@@ -80,6 +61,7 @@ namespace mealmate
                         }
 
                         MessageBox.Show("تم إضافة الوجبة بنجاح!");
+
                     }
                     catch (Exception ex)
                     {
@@ -87,30 +69,27 @@ namespace mealmate
                     }
                     finally
                     {
-                        conn.Close(); // التأكد من إغلاق الاتصال
-                    }
+                        conn.Close(); // التأكد من إغلاق     txtMealID.Clear();
+                        
 
-                    addfood addfoodform = new addfood();
-                    addfoodform.Close();
-                    admin adminform = new admin();
-                    adminform.Show();
+                    }
+                  
+                  
                 } 
                 else
                 {
-                    button2.Text = "تعديل ";
-                    SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-EKGE4HQ;Initial Catalog=mealmate;Integrated Security=True");
-
                     try
                     {
                         conn.Open();
 
                         string query = "UPDATE Meals " +
-                        "SET " +
-                            "MealName = @MealName, " +
-                            "Description = @Description, " +
-                            "MealPce = @MealPce, " +
-                              "CategoryID = @CategoryID " +
-                              "WHERE MealID = @MealID";
+                         "SET " +
+                             "MealName = @MealName, " +
+                              "Description = @Description, " +
+                             "MealPce = @MealPce, " +
+                               "CategoryID = @CategoryID " +
+                               "WHERE MealID = @MealID";
+
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
                             cmd.Parameters.AddWithValue("@MealID", int.Parse(txtMealID.Text));
@@ -123,7 +102,8 @@ namespace mealmate
                             cmd.ExecuteNonQuery();
                         }
 
-                        MessageBox.Show("تم إضافة الوجبة بنجاح!");
+                        MessageBox.Show("تم تعديل  الوجبة بنجاح!");
+
                     }
                     catch (Exception ex)
                     {
@@ -131,27 +111,47 @@ namespace mealmate
                     }
                     finally
                     {
-                        conn.Close(); // التأكد من إغلاق الاتصال
+                        conn.Close(); // التأكد من إغلاق     txtMealID.Clear();
+
+
                     }
-
-                    addfood addfoodform = new addfood();
-                    addfoodform.Close();
-                    admin adminform = new admin();
-                    adminform.Show();
                 }
-            }
+                txtMealName.Clear();
+                txtDescription.Clear();
+                txtMealPce.Clear();
+                txtPhoto.Clear();
+                this.Close();
 
             }
+
+         }
         
 
-        private void addfood_Load(object sender, EventArgs e)
+     
+        private void button1_Click(object sender, EventArgs e)
         {
+          
+        }
+
+        private void addfood_Load_1(object sender, EventArgs e)
+        {
+            if (state == 0)
+            {
+                label5.Text = "إضاف وجبة";
+            }
+            else
+            {
+                label5.Text = "تعديل  وجبة";
+                button2.Text= "تعديل";
+
+            }
+
             SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-EKGE4HQ;Initial Catalog=mealmate;Integrated Security=True");
 
             try
             {
                 conn.Open();
-                string query = "SELECT CategoryID, CategoryName FROM FoodCategories"; 
+                string query = "SELECT CategoryID, CategoryName FROM FoodCategories";
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -177,7 +177,7 @@ namespace mealmate
             cboCategory.ValueMember = "Value";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -189,7 +189,7 @@ namespace mealmate
                 {
                     string filePath = openFileDialog.FileName;
                     pictureBox1.Image = Image.FromFile(filePath);
-                    txtPhoto.Text = filePath; 
+                    txtPhoto.Text = filePath;
                 }
             }
         }

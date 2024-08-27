@@ -62,7 +62,6 @@
             this.label1.Size = new System.Drawing.Size(141, 51);
             this.label1.TabIndex = 1;
             this.label1.Text = "الوجبة ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtDescription
             // 
@@ -98,7 +97,6 @@
             this.label2.Size = new System.Drawing.Size(141, 51);
             this.label2.TabIndex = 7;
             this.label2.Text = "السعر ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -107,7 +105,6 @@
             this.label3.Size = new System.Drawing.Size(141, 51);
             this.label3.TabIndex = 8;
             this.label3.Text = "وصف ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -126,6 +123,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "اضافة صوره";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // pictureBox1
             // 
@@ -135,7 +133,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button2
             // 
@@ -208,6 +205,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addfood";
             this.Text = "addfood";
+            this.Load += new System.EventHandler(this.addfood_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,13 +213,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtMealName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.ComboBox cboCategory;
-        private System.Windows.Forms.TextBox txtMealPce;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -229,7 +221,12 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPhoto;
-        private System.Windows.Forms.TextBox txtMealID;
+        public System.Windows.Forms.TextBox txtMealName;
+        public System.Windows.Forms.TextBox txtDescription;
+        public System.Windows.Forms.ComboBox cboCategory;
+        public System.Windows.Forms.TextBox txtMealPce;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox txtPhoto;
+        public System.Windows.Forms.TextBox txtMealID;
     }
 }

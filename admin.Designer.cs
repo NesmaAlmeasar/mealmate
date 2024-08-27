@@ -35,8 +35,8 @@
             this.buttonfoodmang = new System.Windows.Forms.Button();
             this.buttondietmang = new System.Windows.Forms.Button();
             this.buttonhome = new System.Windows.Forms.Button();
-            this.foodmanage1 = new mealmate.foodmanage();
             this.dietmanage1 = new mealmate.Dietmanage();
+            this.foodmanage1 = new mealmate.foodmanage();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,9 +50,9 @@
             this.panel1.Controls.Add(this.buttondietmang);
             this.panel1.Controls.Add(this.buttonhome);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1527, 0);
+            this.panel1.Location = new System.Drawing.Point(1679, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(590, 1321);
+            this.panel1.Size = new System.Drawing.Size(590, 1594);
             this.panel1.TabIndex = 0;
             // 
             // closebutton
@@ -134,27 +134,29 @@
             this.buttonhome.UseVisualStyleBackColor = false;
             this.buttonhome.Click += new System.EventHandler(this.buttonhome_Click);
             // 
-            // foodmanage1
-            // 
-            this.foodmanage1.Location = new System.Drawing.Point(31, 26);
-            this.foodmanage1.Name = "foodmanage1";
-            this.foodmanage1.Size = new System.Drawing.Size(1464, 1236);
-            this.foodmanage1.TabIndex = 1;
-            // 
             // dietmanage1
             // 
-            this.dietmanage1.Location = new System.Drawing.Point(51, 38);
+            this.dietmanage1.Location = new System.Drawing.Point(37, 35);
             this.dietmanage1.Name = "dietmanage1";
             this.dietmanage1.Size = new System.Drawing.Size(1444, 1224);
             this.dietmanage1.TabIndex = 2;
+            this.dietmanage1.Load += new System.EventHandler(this.dietmanage1_Load);
+            // 
+            // foodmanage1
+            // 
+            this.foodmanage1.Location = new System.Drawing.Point(37, 35);
+            this.foodmanage1.Name = "foodmanage1";
+            this.foodmanage1.Size = new System.Drawing.Size(1464, 1236);
+            this.foodmanage1.TabIndex = 1;
             // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackgroundImage = global::mealmate.Properties.Resources.Screenshot_2024_07_30_234009;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(2117, 1321);
+            this.ClientSize = new System.Drawing.Size(2269, 1594);
             this.Controls.Add(this.dietmanage1);
             this.Controls.Add(this.foodmanage1);
             this.Controls.Add(this.panel1);

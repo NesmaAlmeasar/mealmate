@@ -13,13 +13,15 @@ namespace mealmate
 {
     public partial class foodmanage : UserControl
     {
+
+        addfood addfoodform = new addfood();
         public foodmanage()
         {
             InitializeComponent();
         }
 
 
-        private void foodmanage_Load(object sender, EventArgs e)
+          void display()
         {
             SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-EKGE4HQ;Initial Catalog=mealmate;Integrated Security=True");
             conn.Open();
@@ -36,12 +38,17 @@ namespace mealmate
             conn.Close();
         }
 
+        private void foodmanage_Load(object sender, EventArgs e)
+        {
+            display();
+        }
+
         private void add_Click(object sender, EventArgs e)
         {
-            addfood addfoodform = new addfood();
             addfoodform.state = 0;
-           
+
             addfoodform.Show();
+
 
         }
 
@@ -65,8 +72,9 @@ namespace mealmate
                     }
 
                     // إعادة تحميل البيانات
-                    foodmanage_Load(sender, e);
+                    display();  
                     MessageBox.Show("تم حذف الوجبة بنجاح!");
+                    display();
                 }
             }
             else
@@ -77,10 +85,31 @@ namespace mealmate
 
         private void update_Click(object sender, EventArgs e)
         {
-            addfood addfoodform = new addfood();
-            addfoodform.state =Convert.ToInt32( dataGridView1.CurrentRow.Cells[0].Value) ;
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                //    addfoodform.state = Convert.ToInt32(dataGridView1.CurrentRow.Cells["0"]);
+                addfoodform.state = 1;
+                addfoodform.txtMealID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                addfoodform.txtMealID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                addfoodform.txtMealName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                addfoodform.txtDescription.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                addfoodform.txtMealPce.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                addfoodform.cboCategory.SelectedItem = dataGridView1.CurrentRow.Cells[4].Value;
+                addfoodform.txtPhoto.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
-            addfoodform.Show();
+                addfoodform.Show();
+            }
+            else
+            {
+                MessageBox.Show("يرجى اختيار وجبة ");
+            }
+            display();
+
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {  
         }
     }
 }
